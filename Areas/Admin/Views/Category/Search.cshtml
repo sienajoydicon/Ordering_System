@@ -1,0 +1,52 @@
+﻿@using Ordering_System.Models
+@model IEnumerable<CategoryModel>
+
+<h1></h1>
+
+@foreach (CategoryModel p in Model)
+{
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td width="633px">
+                    @Html.DisplayFor(modelItem => item.CategoryName)
+                </td>
+
+                <td width="507px">
+                    @Ajax.ActionLink(
+                "Edit",
+                "Edit",
+                new { id = item.CategoryID },
+                new AjaxOptions
+                {
+                    HttpMethod = "GET",
+                    InsertionMode = InsertionMode.Replace,
+                    UpdateTargetId = "CategoryStation"
+                })
+                    |
+                @Ajax.ActionLink(
+                "Delete",
+                "Delete",
+                new { id = item.CategoryID },
+                new AjaxOptions
+                {
+                    HttpMethod = "GET",
+                    InsertionMode = InsertionMode.Replace,
+                    UpdateTargetId = "CategoryStation"
+                })
+                </td>
+            </tr>
+        }
+    </table>
+}
+<h1></h1>
+
+<a class="btn" href="~/Admin/Category">Cancel Search</a>

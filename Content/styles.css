@@ -1,0 +1,92 @@
+﻿#cssmenu {
+  list-style: none;
+  padding-left: 0px;
+  width: 12em;
+  z-index:10; /*or more than your image */
+  position:relative;
+}
+ .parent-menu {
+  background-color: #808080;
+  min-width:200px;
+  float:left;
+  margin:0;
+  padding:0;
+}
+#cssmenu li {
+  font: 100% "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+#cssmenu a {
+  background: #333;
+  border-bottom: 1px solid #393939;
+  color: #808080;
+  display: block;
+  margin: 0;
+  padding: 8px 12px;
+  text-decoration: none;
+  font-weight: normal;
+}
+#cssmenu a:hover {
+  font-weight:900;
+  background-image: url("hover.gif");
+  background-repeat: no-repeat;
+  background-position: left center;
+  color: #fff;
+  padding-bottom: 8px;
+}
+#cssmenu li:hover {
+  font-size:19px;
+}
+
+
+#cssmenu ul li:hover > ul {
+  display:block;
+  left: 170px;
+  -webkit-transition: left 300ms ease-in;
+  -moz-transition: left 300ms ease-in;
+  -ms-transition: left 300ms ease-in;
+  transition: left 300ms ease-in;
+}
+
+#cssmenu ul li > ul {
+  display:block;
+  position: absolute;
+  top: 0;
+  left: -700px;
+  min-height:700px;
+  min-width: 350px;
+  z-index: -1;
+  background:#aea79f;
+  
+  -webkit-column-count: 2; /* Chrome, Safari, Opera */
+  -moz-column-count: 2; /* Firefox */
+  column-count: 2;
+
+  -webkit-column-rule: 2px outset #333; /* Chrome, Safari, Opera */
+  -moz-column-rule: 2px outset #333; /* Firefox */
+  column-rule: 2px outset #333;
+
+  -webkit-transition: left 300ms ease-in;
+  -moz-transition: left 300ms ease-in;
+  -ms-transition: left 300ms ease-in;
+  transition: left 300ms ease-in;
+
+}
+
+#cssmenu ul li > ul li{
+    width:180px;
+
+}
+
+ #cssmenu ul li > ul li a {
+        font-size:15px;
+    }
+
+    #cssmenu ul li > ul li a:hover {
+        color: #f5faf9;
+        font-size:15px;
+    }
